@@ -1,6 +1,10 @@
+import sys 
 import numpy as np 
 import cv2 as cv
 import math as maths
+
+URL = str(sys.argv[1])
+print(URL)
 
 def G_Contrast_Param(G_CParam):
     print( "G_contrast: %d" %(G_CParam))
@@ -36,9 +40,10 @@ def UI_Deploy():
 
 
 
-def img_adjustment():
+
+def img_adjustment(x):
     UI_Deploy()
-    src = cv.imread("D:/cv_tests/dataset1.jpg") #need to have the format subflix
+    src = cv.imread(str(x)) #need to have the format subflix
     cv.imshow("Source Image",src) #gennerated window title with image selected   
     h,w,c = src.shape
     H_roi_Prct_low =0.1
@@ -113,5 +118,4 @@ def img_adjustment():
     
 
 if __name__ == "__main__":
-    img_adjustment()
-
+    img_adjustment(URL)
