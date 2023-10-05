@@ -119,3 +119,5 @@ def img_adjustment(x):
 
 if __name__ == "__main__":
     img_adjustment(URL)
+
+
